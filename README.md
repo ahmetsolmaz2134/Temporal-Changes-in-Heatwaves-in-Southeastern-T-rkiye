@@ -17,6 +17,33 @@ The analysis is designed as a reproducible climate-data workflow implemented in 
 The study investigates whether the characteristics of heatwave events have changed significantly over time and whether these changes exhibit spatial and temporal differences across the region.
 
 ---
+---
+
+## Key Results
+
+The following figures summarize the main temporal characteristics of heatwave events across Southeastern Türkiye.
+
+### Heatwave Frequency, Duration and Total Heatwave Days
+
+![Temporal dynamics of heatwave indicators](1b65e9c1-2af5-4e02-9e94-c31427726c25.png)
+
+This figure summarizes the temporal evolution of heatwave frequency, maximum duration, and total heatwave days.
+
+### Annual Heatwave Frequency Across Southeastern Türkiye
+
+![Annual heatwave frequency](62e6777a-f034-416c-9303-3ea25a31e10c.png)
+
+This figure compares annual heatwave frequency across the nine provinces and highlights regional differences in extreme-heat occurrence.
+
+### Main Findings
+
+The analysis indicates an increasing tendency in heatwave frequency and persistence during the study period. The results suggest that extreme-heat conditions are becoming an increasingly important component of regional climate variability.
+
+Considerable spatial differences are also observed among the provinces, with some locations experiencing more frequent events and others showing stronger changes in duration and cumulative heat exposure.
+
+Overall, the results highlight the importance of evaluating **heatwave frequency, duration, and intensity together** rather than relying solely on mean temperature trends.
+
+---
 
 ## Study Region
 
@@ -233,26 +260,3 @@ Pettitt Change-Point Detection
         │
         ▼
 Visualization & Interpretation
-## Key Results
-
-The following figures summarize the main temporal characteristics of heatwave events across Southeastern Türkiye.
-
-### Heatwave Frequency, Duration and Total Heatwave Days
-
-![Temporal dynamics of heatwave indicators](heatwaves_temporal_dynamics_1991_2025.png)
-
-This figure summarizes the annual evolution of heatwave frequency, maximum duration, and total heatwave days.
-
-### Annual Heatwave Frequency
-
-![Annual heatwave frequency](southeastern_turkey_hwn_9provinces_1991_2025.png)
-
-The figure compares annual heatwave frequency across the nine provinces of Southeastern Türkiye and highlights regional differences in extreme-heat occurrence.
-
-### Main Findings
-
-The analysis indicates a general increase in the frequency and persistence of heatwave events during the study period. The temporal patterns suggest that extreme-heat conditions are becoming an increasingly important component of regional climate variability.
-
-The results also indicate considerable spatial differences among the provinces. Some locations experience more frequent heatwave events, while others show stronger changes in event duration and cumulative heat exposure.
-
-Overall, the findings emphasize the importance of examining **heatwave frequency, duration, and intensity together**, rather than relying solely on mean temperature trends.

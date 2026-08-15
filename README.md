@@ -2,11 +2,61 @@
 
 ## Overview
 
-This repository presents a climatological analysis of the **temporal variability and long-term changes in heatwaves across Southeastern Türkiye** using daily meteorological data from the **NASA Prediction of Worldwide Energy Resources (NASA POWER)** project.
+This repository presents a climatological analysis of the temporal variability and long-term changes in heatwaves across Southeastern Türkiye using daily meteorological data from the NASA Prediction of Worldwide Energy Resources (NASA POWER) project.
 
-The study focuses on identifying changes in the **frequency, duration, intensity, and cumulative thermal burden of heatwave events**. Particular attention is given to both daytime and nighttime temperature extremes in order to provide a more comprehensive assessment of increasing thermal stress.
+The study focuses on the frequency, duration, intensity, and cumulative thermal characteristics of heatwave events across nine provinces of Southeastern Türkiye.
 
-The analysis is designed as a reproducible climate-data workflow implemented in **R**, combining climatological indicators with non-parametric statistical trend analysis.
+---
+
+# Key Results
+
+## Heatwave Frequency and Temporal Evolution
+
+![Heatwave Frequency](1b65e9c1-2af5-4e02-9e94-c31427726c25.png)
+
+This figure illustrates the temporal evolution of heatwave occurrence during the study period.
+
+## Regional Heatwave Frequency
+
+![Regional Heatwave Frequency](62e6777a-f034-416c-9303-3ea25a31e10c.png)
+
+The regional comparison highlights differences in heatwave frequency among the provinces of Southeastern Türkiye.
+
+## Heatwave Duration
+
+![Heatwave Duration](8b9aeaf3-074a-43bf-92b6-b7704bca176d.png)
+
+The temporal pattern of heatwave duration provides information on the persistence of extreme-heat events.
+
+## Heatwave Characteristics
+
+![Heatwave Characteristics](b85a7bd3-1849-4b3d-8ca0-15d8cb3bc4a5.png)
+
+This figure summarizes the changing characteristics of heatwave events and their temporal variability.
+
+## Extreme Heat Analysis
+
+![Extreme Heat Analysis](f58b1053-4082-4633-bcde-d039462d2549.png)
+
+The analysis provides an additional assessment of extreme-temperature behavior across the study region.
+
+## Southeastern Türkiye Heatwave Assessment
+
+![Southeastern Türkiye Heatwave Assessment](f9632b2d-920c-4f04-bd3f-9490a586d4a5.png)
+
+The figure provides a regional overview of the observed heatwave characteristics across Southeastern Türkiye.
+
+---
+
+# Main Findings
+
+The results indicate an increasing tendency in the occurrence and persistence of heatwave events during the analyzed period.
+
+The figures also reveal substantial spatial variability among the nine provinces. Heatwave frequency, duration, and intensity do not evolve uniformly across Southeastern Türkiye.
+
+Overall, the findings demonstrate the importance of evaluating multiple heatwave characteristics simultaneously rather than relying solely on changes in mean temperature.
+
+> **Note:** The current figures represent the analytical workflow and preliminary outputs. Final climatological conclusions will be based on the complete NASA POWER observational dataset and statistical significance testing.
 
 ---
 
@@ -17,37 +67,10 @@ The analysis is designed as a reproducible climate-data workflow implemented in 
 The study investigates whether the characteristics of heatwave events have changed significantly over time and whether these changes exhibit spatial and temporal differences across the region.
 
 ---
----
-
-## Key Results
-
-The following figures summarize the main temporal characteristics of heatwave events across Southeastern Türkiye.
-
-### Heatwave Frequency, Duration and Total Heatwave Days
-
-![Temporal dynamics of heatwave indicators](1b65e9c1-2af5-4e02-9e94-c31427726c25.png)
-
-This figure summarizes the temporal evolution of heatwave frequency, maximum duration, and total heatwave days.
-
-### Annual Heatwave Frequency Across Southeastern Türkiye
-
-![Annual heatwave frequency](62e6777a-f034-416c-9303-3ea25a31e10c.png)
-
-This figure compares annual heatwave frequency across the nine provinces and highlights regional differences in extreme-heat occurrence.
-
-### Main Findings
-
-The analysis indicates an increasing tendency in heatwave frequency and persistence during the study period. The results suggest that extreme-heat conditions are becoming an increasingly important component of regional climate variability.
-
-Considerable spatial differences are also observed among the provinces, with some locations experiencing more frequent events and others showing stronger changes in duration and cumulative heat exposure.
-
-Overall, the results highlight the importance of evaluating **heatwave frequency, duration, and intensity together** rather than relying solely on mean temperature trends.
-
----
 
 ## Study Region
 
-The analysis covers the major provinces of Southeastern Türkiye, including:
+The analysis covers:
 
 - Adıyaman
 - Batman
@@ -59,19 +82,15 @@ The analysis covers the major provinces of Southeastern Türkiye, including:
 - Şanlıurfa
 - Şırnak
 
-The same methodological framework is applied consistently across all locations to facilitate regional comparison.
-
 ---
 
 ## Data Source
 
 ### NASA POWER
 
-Daily meteorological data are obtained exclusively from the:
+Daily meteorological data are obtained from the NASA Prediction of Worldwide Energy Resources (NASA POWER).
 
-**NASA Prediction of Worldwide Energy Resources (NASA POWER)**
-
-The analysis primarily uses:
+Primary variables include:
 
 | Variable | Description | Unit |
 |---|---|---|
@@ -80,138 +99,53 @@ The analysis primarily uses:
 | `T2M_MIN` | Minimum air temperature at 2 m | °C |
 | `RH2M` | Relative humidity at 2 m | % |
 
-The primary heatwave detection framework is based on daily maximum temperature, while minimum temperature is used to investigate **hot-night conditions**.
-
 ### Temporal Coverage
 
 **1981–2025**
-
-Daily observations are aggregated into annual and event-based heatwave indicators.
 
 ---
 
 ## Heatwave Definition
 
-Rather than applying a single absolute temperature threshold to all locations, this study uses a **percentile-based threshold approach**.
+A percentile-based threshold approach is used to identify extreme heat.
 
-A location-specific temperature threshold is calculated from the historical distribution of daily maximum temperature.
+The primary framework uses the **90th percentile (P90)** of daily maximum temperature.
 
-The primary framework uses:
+Heatwave events are identified when temperatures exceed the location-specific threshold for a predefined number of consecutive days.
 
-**90th percentile (P90)**
-
-as the exceedance threshold.
-
-A heatwave event is identified when daily maximum temperature exceeds the location-specific threshold for a predefined minimum number of consecutive days.
-
-This approach accounts for regional climatic differences and avoids applying the same absolute temperature threshold to locations with substantially different climatological characteristics.
+This approach accounts for regional climatic differences and provides a consistent framework for comparing heatwave characteristics across Southeastern Türkiye.
 
 ---
 
 ## Heatwave Indicators
 
-Several complementary indicators are calculated.
+The analysis evaluates:
 
-### 1. Heatwave Frequency
-
-Number of independent heatwave events occurring during each year.
-
-\[
-HW_{freq} = N_{events}
-\]
-
----
-
-### 2. Heatwave Duration
-
-Number of consecutive days associated with each heatwave event.
-
-\[
-Duration = D_{end} - D_{start} + 1
-\]
-
-Annual statistics include:
-
-- Mean heatwave duration
-- Maximum heatwave duration
+- Heatwave frequency
+- Heatwave duration
 - Total heatwave days
-
----
-
-### 3. Heatwave Intensity
-
-The intensity of each event is evaluated according to the temperature exceedance above the local threshold.
-
-\[
-Intensity = T_{observed} - T_{threshold}
-\]
-
-This provides an estimate of how strongly temperatures exceed the climatological extreme threshold.
-
----
-
-### 4. Cumulative Heatwave Magnitude
-
-The cumulative thermal burden of an event is calculated as the sum of daily exceedances above the threshold.
-
-\[
-Magnitude = \sum_{i=1}^{n}(T_i-T_{threshold})
-\]
-
-This allows relatively moderate but long-lasting heatwaves to be distinguished from short but exceptionally intense events.
-
----
-
-### 5. Hot Days
-
-The annual number of days exceeding the selected extreme-temperature threshold is calculated to identify changes in the frequency of extreme daytime heat.
-
----
-
-### 6. Hot Nights
-
-Daily minimum temperature is analyzed separately to identify changes in unusually warm nighttime conditions.
-
-This is particularly important because persistent nighttime warmth can reduce nocturnal cooling and increase cumulative thermal stress.
+- Heatwave intensity
+- Cumulative heatwave magnitude
+- Hot days
+- Hot nights
 
 ---
 
 ## Statistical Analysis
 
-The temporal behavior of heatwave indicators is evaluated using several non-parametric statistical methods.
+The temporal characteristics of heatwaves are evaluated using:
 
-### Mann–Kendall Trend Test
+### Mann–Kendall Test
 
-The Mann–Kendall test is used to determine whether a statistically significant monotonic trend exists in:
+Used to identify statistically significant monotonic trends.
 
-- Heatwave frequency
-- Heatwave duration
-- Heatwave intensity
-- Heatwave magnitude
-- Hot days
-- Hot nights
+### Sen's Slope
 
-Statistical significance is evaluated using a conventional significance level of:
+Used to estimate the magnitude and direction of temporal trends.
 
-\[
-\alpha = 0.05
-\]
+### Pettitt Test
 
----
-
-### Sen's Slope Estimator
-
-Sen's slope is used to quantify the magnitude and direction of observed trends.
-
-The estimator provides a robust measure of the annual rate of change while being less sensitive to extreme observations than ordinary least-squares regression.
-
----
-
-### Pettitt Change-Point Test
-
-The Pettitt test is applied to identify potential **abrupt shifts or change points** in the temporal behavior of heatwave indicators.
-
-This allows the analysis to investigate not only gradual trends but also possible periods of structural climatic change.
+Used to identify potential abrupt change points within the heatwave time series.
 
 ---
 
@@ -219,44 +153,27 @@ This allows the analysis to investigate not only gradual trends but also possibl
 
 ```text
 NASA POWER Daily Data
-        │
-        ▼
+        ↓
 Data Acquisition
-        │
-        ▼
-Quality Control & Cleaning
-        │
-        ▼
+        ↓
+Data Cleaning
+        ↓
 Daily Temperature Series
-        │
-        ├── T2M_MAX
-        ├── T2M_MIN
-        └── RH2M
-        │
-        ▼
-Climatological Threshold Calculation
-        │
-        ▼
+        ↓
+P90 Threshold Calculation
+        ↓
 Heatwave Detection
-        │
-        ├── Frequency
-        ├── Duration
-        ├── Intensity
-        ├── Magnitude
-        ├── Hot Days
-        └── Hot Nights
-        │
-        ▼
+        ↓
+Frequency / Duration / Intensity
+        ↓
 Annual Aggregation
-        │
-        ▼
-Mann–Kendall Trend Analysis
-        │
-        ▼
-Sen's Slope Estimation
-        │
-        ▼
-Pettitt Change-Point Detection
-        │
-        ▼
-Visualization & Interpretation
+        ↓
+Mann–Kendall Test
+        ↓
+Sen's Slope
+        ↓
+Pettitt Change-Point Test
+        ↓
+Visualization
+        ↓
+Climate Interpretation
